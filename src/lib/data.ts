@@ -1,11 +1,16 @@
 import {
+  Bot,
   Boxes,
+  Cloud,
   FlaskConical,
   FolderGit2,
   LayoutGrid,
+  Network,
   NotebookPen,
   Rocket,
   Send,
+  Server,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
 
@@ -45,12 +50,12 @@ export type NavItem = {
 
 export const nav: NavItem[] = [
   { label: "Overview", href: "/", icon: LayoutGrid, ready: true },
-  { label: "Career", href: "/career", icon: Rocket, ready: false },
-  { label: "Systems", href: "/systems", icon: Boxes, ready: false },
-  { label: "Projects", href: "/projects", icon: FolderGit2, ready: false },
-  { label: "Engineering Notes", href: "/notes", icon: NotebookPen, ready: false },
-  { label: "Lab", href: "/lab", icon: FlaskConical, ready: false },
-  { label: "Contact", href: "/contact", icon: Send, ready: false },
+  { label: "Career", href: "/career", icon: Rocket, ready: true },
+  { label: "Systems", href: "/systems", icon: Boxes, ready: true },
+  { label: "Projects", href: "/projects", icon: FolderGit2, ready: true },
+  { label: "Engineering Notes", href: "/notes", icon: NotebookPen, ready: true },
+  { label: "Lab", href: "/lab", icon: FlaskConical, ready: true },
+  { label: "Contact", href: "/contact", icon: Send, ready: true },
 ];
 
 /* ────────────────────────────────────────────────────────────
@@ -80,51 +85,40 @@ export type FocusStatus = "active" | "exploring" | "ongoing";
 export type FocusArea = {
   title: string;
   status: FocusStatus;
-  description: string;
-  focus: string;
-  tech: string[];
+  icon: LucideIcon;
+  meta: string;
 };
 
 export const focusAreas: FocusArea[] = [
   {
     title: "Enterprise Automation",
     status: "active",
-    description:
-      "Designing AP automation that removes manual invoice-to-payment work for finance teams — approval routing, matching and exception handling at scale.",
-    focus: "Workflow orchestration and approval pipelines",
-    tech: ["Ruby on Rails", ".NET", "SQL Server", "Azure"],
+    icon: Workflow,
+    meta: "Finance · AP · Workflows",
   },
   {
     title: "Cloud Architecture",
     status: "active",
-    description:
-      "Running multi-tenant workloads on Azure with reliability, cost and observability treated as first-class requirements, not afterthoughts.",
-    focus: "Azure database migrations and infra as code",
-    tech: ["Azure", "AWS", "Docker", "Kubernetes"],
+    icon: Cloud,
+    meta: "Azure · AWS · Migrations",
   },
   {
     title: "AI Assisted Engineering",
     status: "exploring",
-    description:
-      "Embedding LLMs into the engineering workflow — code review, migration tooling and internal agents that shorten the path from idea to production.",
-    focus: "MCP servers and agentic workflows",
-    tech: ["Claude", "OpenAI", "LangChain", "MCP"],
+    icon: Bot,
+    meta: "LLMs · MCP · Automation",
   },
   {
     title: "System Design",
     status: "ongoing",
-    description:
-      "Decomposing monoliths where it pays and keeping them where it doesn't. Boundaries drawn from the domain, not from fashion.",
-    focus: "Event-driven boundaries in finance workflows",
-    tech: ["REST", "Event Driven", "DDD", "Microservices"],
+    icon: Network,
+    meta: "Scalable · Secure · Reliable",
   },
   {
     title: "Backend Engineering",
     status: "active",
-    description:
-      "Query plans, background job throughput and API reliability — the unglamorous work that decides whether software survives real load.",
-    focus: "SQL performance and job queue throughput",
-    tech: ["Rails", "Node.js", "PostgreSQL", "Redis"],
+    icon: Server,
+    meta: "SQL · Queues · APIs",
   },
 ];
 

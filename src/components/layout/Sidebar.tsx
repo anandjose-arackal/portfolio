@@ -2,11 +2,21 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Mail } from "lucide-react";
+import { useLocalTime } from "@/hooks/useLocalTime";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 import { nav, profile } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
+const socials = [
+  { label: "GitHub", href: profile.github, icon: GithubIcon },
+  { label: "LinkedIn", href: profile.linkedin, icon: LinkedinIcon },
+  { label: "Email", href: `mailto:${profile.email}`, icon: Mail },
+];
+
 export function Sidebar() {
   const pathname = usePathname();
+  const time = useLocalTime(profile.timezone);
 
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-[264px] flex-col border-r border-edge bg-surface/60 backdrop-blur-xl lg:flex">
@@ -36,26 +46,10 @@ export function Sidebar() {
         </p>
         <ul className="space-y-0.5">
           {nav.map((item) => {
-            const active = pathname === item.href;
+            const active =
+              pathname === item.href ||
+              (item.href !== "/" && pathname.startsWith(`${item.href}/`));
             const Icon = item.icon;
-
-            if (!item.ready) {
-              return (
-                <li key={item.href}>
-                  <div
-                    aria-disabled
-                    title="In development"
-                    className="flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-[13px] text-faint/70 select-none"
-                  >
-                    <Icon className="size-4 shrink-0" strokeWidth={1.75} />
-                    <span className="flex-1">{item.label}</span>
-                    <span className="rounded border border-edge px-1 py-px font-mono text-[9px] tracking-wider text-faint uppercase">
-                      wip
-                    </span>
-                  </div>
-                </li>
-              );
-            }
 
             return (
               <li key={item.href}>
@@ -83,34 +77,65 @@ export function Sidebar() {
         </ul>
       </nav>
 
-      {/* ── Status block ─────────────────────────────── */}
+      {/* ── System status ────────────────────────────── */}
       <div className="border-t border-edge p-3">
         <div className="rounded-xl border border-edge bg-raised/50 p-3">
-          <dl className="space-y-2.5">
+          <p className="font-mono text-[9.5px] tracking-[0.18em] text-faint uppercase">
+            System status
+          </p>
+          <dl className="mt-2.5 space-y-2">
             <div className="flex items-center justify-between gap-2">
               <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
                 Status
               </dt>
-              <dd className="flex items-center gap-1.5 text-[12px] text-fg">
+              <dd className="flex items-center gap-1.5 font-mono text-[11px] text-ok">
                 <span className="size-1.5 rounded-full bg-ok" />
-                {profile.status}
+                CONNECTED
+              </dd>
+            </div>
+            <div className="flex items-center justify-between gap-2">
+              <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
+                Company
+              </dt>
+              <dd className="truncate text-[11.5px] text-muted">
+                {profile.company}
               </dd>
             </div>
             <div className="flex items-center justify-between gap-2">
               <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
                 Location
               </dt>
-              <dd className="text-[12px] text-muted">{profile.location}</dd>
+              <dd className="text-[11.5px] text-muted">{profile.location}</dd>
             </div>
             <div className="flex items-center justify-between gap-2">
               <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
-                Company
+                Time
               </dt>
-              <dd className="truncate text-[12px] text-muted">
-                {profile.company}
+              <dd
+                suppressHydrationWarning
+                className="font-mono text-[11px] tabular-nums text-muted"
+              >
+                {time ?? "--:--:--"} IST
               </dd>
             </div>
           </dl>
+        </div>
+
+        {/* ── Socials ────────────────────────────────── */}
+        <div className="mt-3 flex items-center justify-center gap-1 px-1">
+          {socials.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              {...(social.href.startsWith("http")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              aria-label={social.label}
+              className="rounded-lg p-2 text-faint transition-colors hover:bg-raised hover:text-fg"
+            >
+              <social.icon className="size-4" strokeWidth={1.75} />
+            </a>
+          ))}
         </div>
       </div>
     </aside>

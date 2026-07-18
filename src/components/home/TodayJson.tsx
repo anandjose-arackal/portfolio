@@ -1,7 +1,6 @@
 import { GitBranch } from "lucide-react";
 import { todayJson } from "@/lib/data";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 
 /** Minimal JSON tokenizer — enough for one honest config file. */
 function renderLine(line: string, key: number) {
@@ -51,12 +50,9 @@ export function TodayJson() {
   const lines = JSON.stringify(todayJson, null, 2).split("\n");
 
   return (
-    <section className="pb-20">
-      <SectionHeader index="02" title="Today" meta="state of work — live" />
-
-      <Reveal>
-        <div className="overflow-hidden rounded-xl border border-edge bg-surface shadow-[0_8px_40px_rgba(0,0,0,0.35)]">
-          {/* Tab bar */}
+    <Reveal className="h-full">
+      <div className="flex h-full flex-col overflow-hidden rounded-xl border border-edge bg-surface shadow-[0_8px_40px_rgba(0,0,0,0.35)]">
+        {/* Tab bar */}
           <div className="flex items-center justify-between border-b border-edge bg-raised/60 pr-4">
             <div className="flex items-center gap-2 border-r border-edge bg-surface px-4 py-2.5">
               <span className="size-1.5 rounded-full bg-accent" />
@@ -68,7 +64,7 @@ export function TodayJson() {
           </div>
 
           {/* Editor body */}
-          <div className="overflow-x-auto">
+          <div className="flex-1 overflow-x-auto">
             <div className="flex min-w-max px-0 py-4 font-mono text-[13px] leading-[1.7]">
               <div
                 aria-hidden
@@ -96,8 +92,7 @@ export function TodayJson() {
               Ln {lines.length}, Col 1 · Spaces: 2 · UTF-8 · JSON
             </span>
           </div>
-        </div>
-      </Reveal>
-    </section>
+      </div>
+    </Reveal>
   );
 }

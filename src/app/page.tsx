@@ -9,8 +9,14 @@ export default function HomePage() {
     <div className="mx-auto max-w-6xl px-5 lg:px-10">
       <Hero />
       <StatsRow />
-      <CurrentFocus />
-      <TodayJson />
+
+      <section
+        aria-label="Current focus and today"
+        className="grid gap-3 pb-20 lg:grid-cols-2"
+      >
+        <CurrentFocus />
+        <TodayJson />
+      </section>
 
       <footer className="flex flex-col items-start justify-between gap-2 border-t border-edge py-8 sm:flex-row sm:items-center">
         <p className="font-mono text-[11px] text-faint">

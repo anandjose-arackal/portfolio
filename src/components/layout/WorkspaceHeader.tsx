@@ -1,36 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { useLocalTime } from "@/hooks/useLocalTime";
 import { nav, profile } from "@/lib/data";
-
-function useLocalTime(timeZone: string) {
-  const [time, setTime] = useState<string | null>(null);
-
-  useEffect(() => {
-    const format = () =>
-      new Intl.DateTimeFormat("en-GB", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false,
-        timeZone,
-      }).format(new Date());
-
-    setTime(format());
-    const id = setInterval(() => setTime(format()), 1000);
-    return () => clearInterval(id);
-  }, [timeZone]);
-
-  return time;
-}
 
 export function WorkspaceHeader() {
   const pathname = usePathname();
   const time = useLocalTime(profile.timezone);
 
   const current =
-    nav.find((item) => item.href === pathname)?.label ?? "Overview";
+    nav.find(
+      (item) =>
+        pathname === item.href ||
+        (item.href !== "/" && pathname.startsWith(`${item.href}/`)),
+    )?.label ?? "Overview";
 
   return (
     <header className="sticky top-0 z-30 border-b border-edge bg-canvas/75 backdrop-blur-xl">
