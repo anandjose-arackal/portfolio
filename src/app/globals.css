@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ── Palette ─────────────────────────────────────── */
+  --color-canvas: #0a0a0b;
+  --color-surface: #111214;
+  --color-raised: #17181b;
+  --color-edge: #242529;
+  --color-edge-strong: #313238;
+  --color-fg: #f3f3f3;
+  --color-muted: #b8b8b8;
+  --color-faint: #6e6f76;
+  --color-accent: #e67e22;
+  --color-ok: #27ae60;
+  --color-info: #3b82f6;
+
+  /* ── Type ────────────────────────────────────────── */
+  --font-display: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", monospace;
+
+  /* ── Shape ───────────────────────────────────────── */
+  --radius-card: 0.75rem;
+
+  /* ── Motion ──────────────────────────────────────── */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+
+  /* Blueprint / CAD-paper grid — nearly invisible by design */
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(59, 130, 246, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.018) 1px, transparent 1px);
+  background-size:
+    192px 192px,
+    192px 192px,
+    32px 32px,
+    32px 32px;
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(230, 126, 34, 0.28);
+  color: var(--color-fg);
+}
+
+/* Thin, quiet scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-edge) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-edge);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
