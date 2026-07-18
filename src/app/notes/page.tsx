@@ -27,7 +27,7 @@ export default function NotesPage() {
         meta={`${notes.length} documents`}
       />
 
-      <div className="space-y-2 py-10">
+      <div className="space-y-2 py-8">
         {notes.map((note, i) => (
           <Reveal key={note.slug} delay={i * 0.04}>
             <Link

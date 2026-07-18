@@ -23,7 +23,7 @@ export default function LabPage() {
         meta={`${active} active / ${experiments.length} total`}
       />
 
-      <div className="grid gap-3 py-10 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-3 py-8 sm:grid-cols-2 xl:grid-cols-3">
         {experiments.map((exp, i) => {
           const status = experimentStatusMeta[exp.status];
           return (

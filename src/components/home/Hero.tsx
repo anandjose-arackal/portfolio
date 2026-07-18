@@ -37,7 +37,7 @@ const ctas = [
 
 export function Hero() {
   return (
-    <section className="grid items-center gap-12 pt-14 pb-20 lg:grid-cols-[1fr_360px] lg:gap-16 lg:pt-20">
+    <section className="grid items-center gap-10 pt-10 pb-14 lg:grid-cols-[1fr_360px] lg:gap-16 lg:pt-14">
       <div>
         <Reveal>
           <p className="flex items-center gap-2 font-mono text-[12px] tracking-wide text-muted">
@@ -52,8 +52,6 @@ export function Hero() {
         <Reveal delay={0.06}>
           <h1 className="mt-6 font-display text-[44px] leading-[0.98] font-semibold tracking-tight text-fg uppercase sm:text-[64px] lg:text-[72px]">
             Anand Jose
-            <br />
-            Arackal
           </h1>
         </Reveal>
 

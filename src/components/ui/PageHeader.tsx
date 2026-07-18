@@ -13,7 +13,7 @@ export function PageHeader({
   meta,
 }: PageHeaderProps) {
   return (
-    <div className="border-b border-edge pt-12 pb-8">
+    <div className="border-b border-edge pt-8 pb-6">
       <div className="flex items-baseline justify-between gap-4">
         <p className="font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
           {overline}

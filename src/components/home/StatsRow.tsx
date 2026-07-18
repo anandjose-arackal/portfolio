@@ -7,7 +7,7 @@ export function StatsRow() {
   const reduce = useReducedMotion();
 
   return (
-    <section aria-label="Career statistics" className="pb-20">
+    <section aria-label="Career statistics" className="pb-14">
       <ul className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
         {stats.map((stat, i) => (
           <motion.li

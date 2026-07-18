@@ -138,7 +138,7 @@ export function ProjectsGrid() {
       : projects.filter((p) => p.categories.includes(filter));
 
   return (
-    <div className="py-10">
+    <div className="py-8">
       {/* Filter bar */}
       <div className="mb-6 flex flex-wrap gap-2">
         {(["All", ...projectCategories] as Filter[]).map((f) => (

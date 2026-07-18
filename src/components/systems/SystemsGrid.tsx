@@ -146,7 +146,7 @@ export function SystemsGrid() {
 
   return (
     <>
-      <div className="grid gap-3 py-10 md:grid-cols-2">
+      <div className="grid gap-3 py-8 md:grid-cols-2">
         {systemCategories.map((category, i) => (
           <Reveal key={category.name} delay={i * 0.04}>
             <section className="h-full rounded-xl border border-edge bg-surface p-5">

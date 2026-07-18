@@ -18,7 +18,7 @@ export default function ContactPage() {
         description="Interested in enterprise architecture, backend systems or an intriguing problem? Open a channel."
       />
 
-      <div className="grid gap-6 py-10 lg:grid-cols-[1fr_320px]">
+      <div className="grid gap-6 py-8 lg:grid-cols-[1fr_320px]">
         <ContactForm />
         <ContactRail />
       </div>

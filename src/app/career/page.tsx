@@ -20,7 +20,7 @@ export default function CareerPage() {
         meta={`${deployments.length} deployments`}
       />
 
-      <div className="space-y-3 py-10">
+      <div className="space-y-3 py-8">
         {deployments.map((deployment, i) => (
           <Reveal key={deployment.version} delay={i * 0.05}>
             <DeployCard deployment={deployment} defaultOpen={i === 0} />

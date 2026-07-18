@@ -13,7 +13,7 @@ export function NoteLayout({ note }: { note: Note }) {
   return (
     <div className="mx-auto max-w-5xl px-5 lg:px-10">
       {/* Doc header */}
-      <div className="border-b border-edge pt-10 pb-8">
+      <div className="border-b border-edge pt-8 pb-6">
         <Link
           href="/notes"
           className="inline-flex items-center gap-1.5 font-mono text-[11px] text-faint transition-colors hover:text-fg"
@@ -37,9 +37,9 @@ export function NoteLayout({ note }: { note: Note }) {
         </div>
       </div>
 
-      <div className="grid gap-10 py-10 xl:grid-cols-[1fr_200px]">
+      <div className="grid gap-10 py-8 xl:grid-cols-[1fr_200px]">
         {/* Sections */}
-        <div className="min-w-0 space-y-10">
+        <div className="min-w-0 space-y-8">
           {note.sections.map((section, i) => (
             <section key={section.id} id={section.id} className="scroll-mt-20">
               <h2 className="flex items-baseline gap-3">

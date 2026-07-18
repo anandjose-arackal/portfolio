@@ -13,7 +13,7 @@ export default function HomePage() {
 
       <section
         aria-label="Current focus, today and career timeline"
-        className="grid gap-3 pb-20 lg:grid-cols-2 xl:grid-cols-3"
+        className="grid gap-3 pb-14 lg:grid-cols-2 xl:grid-cols-3"
       >
         <CurrentFocus />
         <TodayJson />
