@@ -47,16 +47,16 @@ export function CareerTimeline() {
                 </span>
 
                 <span className="min-w-0 flex-1">
-                  <span className="flex items-center gap-2 font-mono text-[10.5px] tracking-wide text-accent">
+                  <span className="flex items-center gap-2 font-mono text-[11px] tracking-wide text-accent">
                     {d.period}
-                    <span className="rounded border border-edge bg-raised px-1 py-px text-[9px] text-faint">
+                    <span className="rounded border border-edge bg-raised px-1 py-px text-[9.5px] text-faint">
                       {d.version}
                     </span>
                   </span>
-                  <span className="mt-0.5 block truncate text-[13px] font-medium text-fg">
+                  <span className="mt-0.5 block truncate text-[14.5px] font-medium text-fg">
                     {d.role}
                   </span>
-                  <span className="block truncate font-mono text-[10.5px] text-faint">
+                  <span className="block truncate font-mono text-[11.5px] text-faint">
                     {d.company} · {d.tech.slice(0, 3).join(" · ")}
                   </span>
                 </span>

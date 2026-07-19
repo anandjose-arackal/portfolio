@@ -2,7 +2,7 @@ import { Hero } from "@/components/home/Hero";
 import { StatsRow } from "@/components/home/StatsRow";
 import { CareerTimeline } from "@/components/home/CareerTimeline";
 import { CurrentFocus } from "@/components/home/CurrentFocus";
-import { TodayJson } from "@/components/home/TodayJson";
+import { TodayCode } from "@/components/home/TodayCode";
 import { profile } from "@/lib/data";
 
 export default function HomePage() {
@@ -16,7 +16,7 @@ export default function HomePage() {
         className="grid gap-3 pb-14 lg:grid-cols-2 xl:grid-cols-3"
       >
         <CurrentFocus />
-        <TodayJson />
+        <TodayCode />
         <CareerTimeline />
       </section>
 

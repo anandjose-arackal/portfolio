@@ -131,14 +131,3 @@ export const focusStatusMeta: Record<
   ongoing: { label: "Ongoing", color: "var(--color-accent)" },
 };
 
-/* ────────────────────────────────────────────────────────────
-   Home — today.json
-   ──────────────────────────────────────────────────────────── */
-
-export const todayJson = {
-  role: "Senior Software Engineer",
-  company: "Sage AP Automation",
-  experience: "10+ Years",
-  currently_building: ["Enterprise Finance", "Cloud Systems", "AI Engineering"],
-  learning: ["MCP", "Agentic AI", "LLMs"],
-};

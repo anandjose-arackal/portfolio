@@ -24,14 +24,14 @@ export function CurrentFocus() {
                 key={area.title}
                 className="group flex items-center gap-3 rounded-lg border border-edge bg-raised/40 px-3 py-2.5 transition-colors hover:border-edge-strong"
               >
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-edge bg-surface text-muted">
-                  <Icon className="size-4" strokeWidth={1.75} />
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-edge bg-surface text-muted">
+                  <Icon className="size-[18px]" strokeWidth={1.75} />
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate text-[13px] font-medium text-fg">
+                  <span className="block truncate text-[14.5px] font-medium text-fg">
                     {area.title}
                   </span>
-                  <span className="block truncate font-mono text-[10.5px] text-faint">
+                  <span className="block truncate font-mono text-[11.5px] text-faint">
                     {area.meta}
                   </span>
                 </span>
