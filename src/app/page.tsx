@@ -12,11 +12,14 @@ export default function HomePage() {
       <StatsRow />
 
       <section
-        aria-label="Current focus, today and career timeline"
-        className="grid gap-3 pb-14 lg:grid-cols-2 xl:grid-cols-3"
+        aria-label="Current focus and today"
+        className="grid gap-3 pb-3 lg:grid-cols-2"
       >
         <CurrentFocus />
         <TodayCode />
+      </section>
+
+      <section aria-label="Career timeline" className="pb-14">
         <CareerTimeline />
       </section>
 
