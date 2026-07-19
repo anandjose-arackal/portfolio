@@ -12,7 +12,7 @@ export function BlueprintPortrait() {
   const hasPortrait = existsSync(join(process.cwd(), "public", "portrait.jpg"));
 
   return (
-    <figure className="relative mx-auto w-full max-w-[340px]">
+    <figure className="relative mx-auto flex h-full w-full max-w-[340px] flex-col">
       {/* Blueprint sketches — behind, deliberately faint */}
       <svg
         aria-hidden
@@ -42,8 +42,8 @@ export function BlueprintPortrait() {
       </svg>
 
       {/* Portrait card */}
-      <div className="relative overflow-hidden rounded-xl border border-edge bg-surface shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
-        <div className="relative aspect-[4/5]">
+      <div className="relative flex flex-1 flex-col overflow-hidden rounded-xl border border-edge bg-surface shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
+        <div className="relative min-h-[300px] flex-1">
           {hasPortrait ? (
             <Image
               src="/portrait.jpg"
