@@ -1,7 +1,9 @@
 /* ────────────────────────────────────────────────────────────
    Career — rendered as a deployment history.
-   TODO(anand): replace company names, dates and all bullet
-   content with your real history.
+   Each role (incl. promotions within one company) is a deploy.
+   v1.0 (Trivand) is fully real. The Finly.io → Sage roles have
+   real titles, companies and dates; TODO(anand): tighten the
+   bullet content for v2.0–v4.0 to match your actual work.
    ──────────────────────────────────────────────────────────── */
 
 export type Deployment = {
@@ -22,14 +24,14 @@ export type Deployment = {
 export const deployments: Deployment[] = [
   {
     version: "v4.0",
-    role: "Senior Software Engineer",
+    role: "Product Engineer",
     company: "Sage AP Automation",
-    period: "2022 — Present",
+    period: "2025 — Present",
     current: true,
     summary:
-      "Building enterprise AP automation — invoice capture, approval routing and payment workflows for finance teams at scale.",
+      "Building enterprise AP automation at Sage — invoice capture, approval routing and payment workflows for finance teams at scale.",
     log: [
-      "checkout release/senior-engineer",
+      "checkout release/product-engineer",
       "restoring domain context: accounts-payable …",
       "build passed — finance workflows compiled clean",
       "shipping: automation pipeline → production",
@@ -59,101 +61,106 @@ export const deployments: Deployment[] = [
   },
   {
     version: "v3.0",
-    role: "Software Engineer",
-    company: "Enterprise SaaS company", // TODO(anand)
-    period: "2018 — 2022",
+    role: "Solution Engineer",
+    company: "Finly.io → Sage plc",
+    period: "Oct 2021 — 2025",
     current: false,
     summary:
-      "Built and scaled multi-tenant SaaS modules; moved workloads to the cloud and hardened the platform for enterprise customers.",
+      "Moved into solution engineering as Finly.io was acquired by Sage plc — bridging product, customers and delivery for enterprise finance automation.",
     log: [
-      "checkout release/software-engineer",
-      "provisioning cloud infrastructure …",
-      "build passed — multi-tenant suite green",
-      "shipped: platform modules → production",
+      "checkout release/solution-engineer",
+      "acquisition merge: finly.io → sage plc …",
+      "build passed — enterprise integrations green",
+      "shipped: customer solutions → production",
     ],
     responsibilities: [
-      "Delivered customer-facing modules across the full stack.",
-      "Migrated on-prem workloads to cloud infrastructure.",
-      "Introduced background job architecture for long-running work.",
+      "Owned solution design for enterprise customer integrations and onboarding.",
+      "Bridged engineering, product and customers to deliver AP automation at scale.",
+      "Drove system reliability and production support for key accounts.",
     ],
     deliveries: [
-      "Cloud migration of core services with zero data loss.",
-      "Reporting engine used across enterprise accounts.",
-      "CI/CD pipeline that cut release time from days to hours.",
+      "Enterprise customer integrations delivered end-to-end.",
+      "Solution tooling that shortened onboarding and integration time.",
     ],
     impact: [
-      "Enabled enterprise deals by meeting cloud and compliance requirements.",
-      "Improved release cadence and deployment confidence across the team.",
+      "Improved delivery speed and reliability for enterprise finance customers.",
+      "Smoothed the platform's transition through acquisition into Sage.",
     ],
-    tech: ["Ruby on Rails", "React", "MySQL", "AWS", "Docker"],
+    tech: ["Ruby on Rails", ".NET", "SQL Server", "Azure", "REST"],
     lessons: [
-      "Tenant isolation decisions made early are the cheapest ones.",
-      "A deploy pipeline is a product — treat it like one.",
+      "Solution engineering is translation — between the domain and the system.",
+      "The best integration is the one the customer never has to think about.",
     ],
   },
   {
     version: "v2.0",
-    role: "Full Stack Developer",
-    company: "Product studio", // TODO(anand)
-    period: "2016 — 2018",
+    role: "Product Development Engineer",
+    company: "Finly.io",
+    period: "Oct 2018 — Oct 2021",
     current: false,
     summary:
-      "Shipped web products end-to-end — from database schema to frontend — across several business domains.",
+      "Joined an AP automation startup, building core product features across the stack as the platform scaled toward enterprise.",
     log: [
-      "checkout release/full-stack",
-      "installing frontend toolchain …",
-      "build passed — UI + API integration green",
-      "shipped: client products → production",
+      "checkout release/product-development",
+      "provisioning cloud infrastructure …",
+      "build passed — platform suite green",
+      "shipped: product modules → production",
     ],
     responsibilities: [
-      "Built REST APIs and React frontends for business applications.",
-      "Owned database design and query optimization for product features.",
-      "Worked directly with stakeholders to turn workflows into software.",
+      "Built customer-facing product features end-to-end across the stack.",
+      "Developed integrations and APIs for the AP automation platform.",
+      "Contributed to database design and performance for growing data volumes.",
     ],
     deliveries: [
-      "Multiple production web applications delivered end-to-end.",
-      "Reusable component library adopted across projects.",
+      "Core product modules shipped to a growing customer base.",
+      "Third-party and payment integrations for the platform.",
+      "Background job architecture for long-running document processing.",
     ],
     impact: [
-      "Shortened client delivery cycles through shared tooling.",
-      "Replaced manual business processes with dependable software.",
+      "Helped scale the product from startup toward enterprise readiness.",
+      "Improved platform throughput as document volumes grew.",
     ],
-    tech: ["Ruby on Rails", "React", "PostgreSQL", "Redis"],
+    tech: ["Ruby on Rails", "React", "PostgreSQL", "Redis", "AWS"],
     lessons: [
-      "The database schema outlives every framework choice above it.",
-      "Talking to users beats guessing what they need.",
+      "In a startup, the feature you ship this week funds the architecture you want next quarter.",
+      "Integrations are where product reality meets the outside world — treat them as first-class.",
     ],
   },
   {
     version: "v1.0",
-    role: "Software Developer",
-    company: "IT services firm", // TODO(anand)
-    period: "2014 — 2016",
+    role: "Associate Software Engineer",
+    company: "Trivand Technologies Pvt Ltd",
+    period: "Feb 2016 — Sep 2018",
     current: false,
     summary:
-      "First production years — web development, system administration and the fundamentals of keeping software alive.",
+      "First engineering role — designed and built multi-client insurance management software for a leading insurance brokerage, from role-based claims workflows to bulk invoicing.",
     log: [
-      "initial commit",
-      "learning production the honest way …",
-      "build passed — first systems live",
-      "shipped: v1.0 → production",
+      "init commit — first production role",
+      "building insurance platform for multi-client tenancy …",
+      "build passed — claims + invoicing suite green",
+      "deploy: claim-assignment + bulk-invoicing → production",
+      "impact: resource utilization +15% ✓",
     ],
     responsibilities: [
-      "Developed and maintained web applications for business clients.",
-      "Administered Linux servers, backups and deployments.",
-      "Automated recurring operational tasks with scripts.",
+      "Designed and developed a multi-client insurance management platform for a leading insurance brokerage.",
+      "Established operational specifications and formulated software requirements with stakeholders.",
+      "Wrote maintainable, extensible code in a collaborative team environment.",
+      "Partnered with the design team to elevate the client-side experience.",
     ],
     deliveries: [
-      "Business applications running for years after handover.",
-      "Deployment and backup automation for client infrastructure.",
+      "Role-based claim assignment algorithm tailored to different user roles.",
+      "Bulk claim and invoicing functionality for high-volume claim recovery.",
+      "Responsive customer-support workflows that opened an additional revenue stream.",
     ],
     impact: [
-      "Kept client systems reliable with minimal operational budget.",
+      "Lifted resource utilization by 15% through role-aware claim assignment.",
+      "Accelerated large-scale claim recovery via bulk processing and invoicing.",
+      "Generated additional revenue for the company through responsive customer support.",
     ],
-    tech: ["Ruby on Rails", "MySQL", "Linux", "Bash"],
+    tech: ["Ruby on Rails", "MongoDB", "Redis", "Bootstrap", "jQuery", "REST", "AWS"],
     lessons: [
-      "Production teaches faster than any course — keep the pager close.",
-      "Automation compounds; manual heroics don't.",
+      "Building for multiple clients teaches you where software must be configurable — and where it must not.",
+      "Clear requirements up front save more time than clever code ever will.",
     ],
   },
 ];
