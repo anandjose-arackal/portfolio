@@ -34,7 +34,7 @@ export const profile = {
   resume: "/resume.pdf",
   tagline: "Currently building enterprise finance software at Sage AP Automation.",
   summary:
-    "Ten years of building enterprise software end to end — full-stack Rails applications, payment integrations, and the Azure infrastructure that runs them. My work centres on solution engineering and system reliability: turning complex business problems into software that stays up, scales cleanly, and keeps earning its keep in production.",
+    "Ten years spanning the full software development lifecycle — from requirements and architecture through delivery, payment integrations, and operating the Azure infrastructure it runs on. My focus is solution engineering and system reliability: turning complex business problems into software that stays up, scales cleanly, and keeps earning its keep in production.",
 };
 
 /* ────────────────────────────────────────────────────────────
