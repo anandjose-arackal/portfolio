@@ -23,7 +23,9 @@ import {
 export const profile = {
   name: "Anand Jose Arackal",
   initials: "AJA",
-  role: "Senior Software Engineer",
+  // Headline from the profile PDF — final wording still open.
+  role: "Software Engineer",
+  specialties: ["Full-Stack", "Integrations", "Data & AI Agents"],
   company: "Sage AR Automation",
   location: "Kerala, India",
   timezone: "Asia/Kolkata",

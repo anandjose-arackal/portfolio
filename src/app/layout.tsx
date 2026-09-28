@@ -30,7 +30,8 @@ export const metadata: Metadata = {
   },
   description: profile.summary,
   keywords: [
-    "Senior Software Engineer",
+    "Software Engineer",
+    "Full-Stack Engineer",
     "Enterprise Software",
     "Cloud Architecture",
     "Ruby on Rails",

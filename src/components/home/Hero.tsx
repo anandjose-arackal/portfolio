@@ -56,8 +56,13 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <p className="mt-4 font-display text-lg font-medium text-accent">
-            {profile.role}
+          <p className="mt-4 flex flex-col gap-1">
+            <span className="font-display text-lg font-medium text-accent">
+              {profile.role}
+            </span>
+            <span className="font-mono text-[12.5px] tracking-wide text-muted">
+              {profile.specialties.join(" · ")}
+            </span>
           </p>
         </Reveal>
 
