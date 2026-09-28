@@ -36,7 +36,10 @@ export const metadata: Metadata = {
     "Ruby on Rails",
     ".NET",
     "Azure",
-    "AP Automation",
+    "AP & AR Automation",
+    "ERP Integration",
+    "Payment Integration",
+    "AI Agents",
   ],
   authors: [{ name: profile.name }],
   openGraph: {

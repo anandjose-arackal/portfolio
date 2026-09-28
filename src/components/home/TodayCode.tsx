@@ -33,7 +33,7 @@ const source: Piece[][] = [
   L(["module ", "kw"], ["Anand", "type"]),
   L(["  class ", "kw"], ["Today", "type"]),
   L(["    ROLE", "const"], ["       = ", "op"], ['"Senior Software Engineer"', "str"]),
-  L(["    COMPANY", "const"], ["    = ", "op"], ['"Sage AP Automation"', "str"]),
+  L(["    COMPANY", "const"], ["    = ", "op"], ['"Sage AR Automation"', "str"]),
   L(["    EXPERIENCE", "const"], [" = ", "op"], ['"10+ Years"', "str"]),
   [],
   L(["    def ", "kw"], ["currently_building", "method"]),

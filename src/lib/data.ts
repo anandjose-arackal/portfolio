@@ -24,15 +24,15 @@ export const profile = {
   name: "Anand Jose Arackal",
   initials: "AJA",
   role: "Senior Software Engineer",
-  company: "Sage AP Automation",
+  company: "Sage AR Automation",
   location: "Kerala, India",
   timezone: "Asia/Kolkata",
   status: "Available",
   email: "anandjose.live@gmail.com",
-  github: "https://github.com/anandjosearackal",
-  linkedin: "https://www.linkedin.com/in/anandjosearackal",
+  github: "https://github.com/anandjose-arackal",
+  linkedin: "https://www.linkedin.com/in/anand-jose-arackal",
   resume: "/resume.pdf",
-  tagline: "Currently building enterprise finance software at Sage AP Automation.",
+  tagline: "Currently building enterprise finance software at Sage AR Automation.",
   summary:
     "Ten years spanning the full software development lifecycle — from requirements and architecture through delivery, systems integration, and the cloud infrastructure that runs it at scale. My focus is solution engineering and system reliability: turning complex business problems into software that stays up, scales cleanly, and keeps earning its keep in production.",
 };
@@ -71,7 +71,7 @@ export type Stat = {
 export const stats: Stat[] = [
   { label: "Experience", value: "10+", detail: "years in production" },
   { label: "Projects", value: "20+", detail: "shipped to enterprise" },
-  { label: "Enterprise Domains", value: "Finance", detail: "AP automation" },
+  { label: "Enterprise Domains", value: "Finance", detail: "AP & AR automation" },
   { label: "Cloud Platforms", value: "Azure · AWS", detail: "multi-tenant scale" },
   { label: "Current Mission", value: "Enterprise Automation", detail: "at Sage" },
 ];
