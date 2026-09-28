@@ -38,9 +38,17 @@ function LinkButton({
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+// AnimatePresence "popLayout" needs its direct children to forward a ref.
+function ProjectCard({
+  project,
+  ref,
+}: {
+  project: Project;
+  ref?: React.Ref<HTMLElement>;
+}) {
   return (
     <motion.article
+      ref={ref}
       layout
       initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -57,6 +65,14 @@ function ProjectCard({ project }: { project: Project }) {
           <h3 className="truncate font-mono text-[14px] font-medium text-fg">
             {project.name}
           </h3>
+          <span className="shrink-0 rounded-full border border-edge-strong px-2 py-px font-mono text-[9.5px] text-faint capitalize">
+            {project.visibility}
+          </span>
+          {project.contribution ? (
+            <span className="shrink-0 rounded-full border border-info/40 bg-info/10 px-2 py-px font-mono text-[9.5px] text-info">
+              contributor
+            </span>
+          ) : null}
           {project.featured ? (
             <span className="flex shrink-0 items-center gap-1 rounded-md border border-accent/40 bg-accent/10 px-1.5 py-0.5 font-mono text-[9.5px] tracking-wider text-accent uppercase">
               <Star className="size-2.5" strokeWidth={2} />
