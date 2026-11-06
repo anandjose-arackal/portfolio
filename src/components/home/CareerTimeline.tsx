@@ -11,19 +11,19 @@ import { Reveal } from "@/components/ui/Reveal";
 export function CareerTimeline() {
   return (
     <Reveal>
-      <section className="rounded-xl border border-edge bg-surface p-5 sm:p-6">
+      <section className="rounded-card border border-edge bg-surface p-5 sm:p-6">
         <header className="flex items-baseline justify-between gap-3">
           <div className="flex items-baseline gap-3">
-            <h2 className="font-mono text-[11px] tracking-[0.18em] text-fg uppercase">
+            <h2 className="font-mono text-label tracking-label text-fg uppercase">
               Career Timeline
             </h2>
-            <span className="font-mono text-[10px] text-faint">
+            <span className="font-mono text-micro text-faint">
               {deployments.length} deployments
             </span>
           </div>
           <Link
             href="/career"
-            className="group inline-flex items-center gap-1.5 font-mono text-[11px] text-muted transition-colors hover:text-fg"
+            className="group inline-flex items-center gap-1.5 font-mono text-label text-muted transition-colors hover:text-fg"
           >
             <span className="hidden sm:inline">View deployment history</span>
             <span className="sm:hidden">History</span>
@@ -41,8 +41,8 @@ export function CareerTimeline() {
                 href="/career"
                 className={`group relative flex h-full flex-col rounded-lg border p-4 transition-colors ${
                   d.current
-                    ? "border-accent/30 bg-accent/[0.04] hover:border-accent/50"
-                    : "border-edge bg-raised/30 hover:border-edge-strong hover:bg-raised/50"
+                    ? "border-accent/30 bg-accent/[0.04] hover:border-accent/50 hover:shadow-glow-amber"
+                    : "border-edge bg-raised/30 hover:border-info/40 hover:shadow-glow-blue hover:bg-raised/50"
                 }`}
               >
                 {/* Rail: node dot + connector + version */}
@@ -60,24 +60,24 @@ export function CareerTimeline() {
                     />
                   </span>
                   <span className="h-px flex-1 bg-edge" />
-                  <span className="rounded border border-edge bg-raised px-1.5 py-px font-mono text-[10px] text-faint">
+                  <span className="rounded border border-edge bg-raised px-1.5 py-px font-mono text-micro text-faint">
                     {d.version}
                   </span>
                 </div>
 
-                <p className="font-mono text-[11px] tracking-wide text-accent">
+                <p className="font-mono text-label tracking-wide text-accent">
                   {d.period}
                 </p>
-                <p className="mt-1 text-[15px] leading-snug font-medium text-fg">
+                <p className="mt-1 text-body leading-snug font-medium text-fg">
                   {d.role}
                 </p>
-                <p className="mt-0.5 text-[12.5px] text-muted">{d.company}</p>
+                <p className="mt-0.5 text-small text-muted">{d.company}</p>
 
                 <div className="mt-3 flex flex-1 flex-wrap content-end gap-1.5">
                   {d.tech.slice(0, 3).map((t) => (
                     <span
                       key={t}
-                      className="rounded border border-edge bg-surface px-1.5 py-0.5 font-mono text-[10px] text-muted"
+                      className="rounded border border-edge bg-surface px-1.5 py-0.5 font-mono text-micro text-muted"
                     >
                       {t}
                     </span>

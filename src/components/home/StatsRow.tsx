@@ -20,15 +20,15 @@ export function StatsRow() {
               delay: i * 0.07,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="group rounded-xl border border-edge bg-surface p-4 transition-colors hover:border-edge-strong"
+            className="group rounded-card border border-edge bg-surface p-4 transition hover:border-info/40 hover:shadow-glow-blue"
           >
-            <p className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
+            <p className="font-mono text-micro tracking-label text-faint uppercase">
               {stat.label}
             </p>
             <p className="mt-3 font-display text-[22px] leading-tight font-semibold text-fg">
               {stat.value}
             </p>
-            <p className="mt-1 text-[11px] text-faint">{stat.detail}</p>
+            <p className="mt-1 text-label text-faint">{stat.detail}</p>
           </motion.li>
         ))}
       </ul>

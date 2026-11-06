@@ -22,8 +22,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  // TODO(anand): set the real production domain before deploying.
-  metadataBase: new URL("https://anandjosearackal.dev"),
+  metadataBase: new URL(profile.siteUrl),
   title: {
     default: `${profile.name} — ${profile.role}`,
     template: `%s — ${profile.name}`,
@@ -31,6 +30,7 @@ export const metadata: Metadata = {
   description: profile.summary,
   keywords: [
     "Software Engineer",
+    "AI Architect",
     "Full-Stack Engineer",
     "Enterprise Software",
     "Cloud Architecture",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0b",
+  themeColor: "#0d0d14",
   colorScheme: "dark",
 };
 

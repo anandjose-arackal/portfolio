@@ -29,7 +29,7 @@ function Pipeline({ open }: { open: boolean }) {
             initial={reduce ? false : { opacity: 0.4 }}
             animate={
               open
-                ? { opacity: 1, borderColor: "rgba(39,174,96,0.4)" }
+                ? { opacity: 1, borderColor: "rgba(124,193,66,0.4)" }
                 : { opacity: 0.4 }
             }
             transition={{ duration: 0.2, delay: 0.1 + i * 0.22 }}
@@ -41,7 +41,7 @@ function Pipeline({ open }: { open: boolean }) {
             >
               <Check className="size-3 text-ok" strokeWidth={2.5} />
             </motion.span>
-            <span className="font-mono text-[10px] tracking-wider text-muted uppercase">
+            <span className="font-mono text-micro tracking-wider text-muted uppercase">
               {stage}
             </span>
           </motion.div>
@@ -55,7 +55,7 @@ function DeployLog({ lines, open }: { lines: string[]; open: boolean }) {
   const reduce = useReducedMotion();
 
   return (
-    <div className="rounded-lg border border-edge bg-canvas/60 px-4 py-3 font-mono text-[11.5px] leading-relaxed">
+    <div className="rounded-lg border border-edge bg-canvas/60 px-4 py-3 font-mono text-label leading-relaxed">
       {lines.map((line, i) => (
         <motion.p
           key={i}
@@ -75,12 +75,12 @@ function DeployLog({ lines, open }: { lines: string[]; open: boolean }) {
 function DetailList({ label, items }: { label: string; items: string[] }) {
   return (
     <div>
-      <h4 className="font-mono text-[10px] tracking-[0.16em] text-faint uppercase">
+      <h4 className="font-mono text-micro tracking-label text-faint uppercase">
         {label}
       </h4>
       <ul className="mt-2 space-y-1.5">
         {items.map((item) => (
-          <li key={item} className="flex gap-2 text-[13px] leading-relaxed text-muted">
+          <li key={item} className="flex gap-2 text-small leading-relaxed text-muted">
             <span className="mt-[7px] size-1 shrink-0 rounded-full bg-edge-strong" />
             {item}
           </li>
@@ -101,7 +101,7 @@ export function DeployCard({
   const d = deployment;
 
   return (
-    <article className="overflow-hidden rounded-xl border border-edge bg-surface transition-colors hover:border-edge-strong">
+    <article className="overflow-hidden rounded-card border border-edge bg-surface transition hover:border-info/40 hover:shadow-glow-blue">
       {/* Header — always visible */}
       <button
         type="button"
@@ -111,7 +111,7 @@ export function DeployCard({
       >
         <span
           className={cn(
-            "shrink-0 rounded-md border px-2 py-1 font-mono text-[11px] font-medium",
+            "shrink-0 rounded-md border px-2 py-1 font-mono text-label font-medium",
             d.current
               ? "border-accent/40 bg-accent/10 text-accent"
               : "border-edge bg-raised text-muted",
@@ -121,10 +121,10 @@ export function DeployCard({
         </span>
 
         <span className="min-w-0 flex-1">
-          <span className="block truncate font-display text-[15px] font-medium text-fg">
+          <span className="block truncate font-display text-body font-medium text-fg">
             {d.role}
           </span>
-          <span className="block truncate text-[12px] text-faint">
+          <span className="block truncate text-small text-faint">
             {d.company} · {d.period}
           </span>
         </span>
@@ -136,7 +136,7 @@ export function DeployCard({
               d.current ? "bg-ok" : "bg-faint/50",
             )}
           />
-          <span className="font-mono text-[10px] tracking-wider text-faint uppercase">
+          <span className="font-mono text-micro tracking-wider text-faint uppercase">
             {d.current ? "in production" : "stable"}
           </span>
         </span>
@@ -161,7 +161,7 @@ export function DeployCard({
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="space-y-5 border-t border-edge px-5 py-5">
-              <p className="max-w-3xl text-[13px] leading-relaxed text-muted">
+              <p className="max-w-3xl text-small leading-relaxed text-muted">
                 {d.summary}
               </p>
 

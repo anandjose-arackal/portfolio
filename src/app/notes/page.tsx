@@ -32,17 +32,17 @@ export default function NotesPage() {
           <Reveal key={note.slug} delay={i * 0.04}>
             <Link
               href={`/notes/${note.slug}`}
-              className="group flex items-center gap-4 rounded-xl border border-edge bg-surface px-5 py-4 transition-colors hover:border-edge-strong"
+              className="group flex items-center gap-4 rounded-card border border-edge bg-surface px-5 py-4 transition hover:border-info/40 hover:shadow-glow-blue"
             >
               <FileText
                 className="size-4 shrink-0 text-faint"
                 strokeWidth={1.75}
               />
               <span className="min-w-0 flex-1">
-                <span className="block truncate font-display text-[14.5px] font-medium text-fg">
+                <span className="block truncate font-display text-body font-medium text-fg">
                   {note.title}
                 </span>
-                <span className="mt-0.5 block truncate text-[12px] text-faint">
+                <span className="mt-0.5 block truncate text-small text-faint">
                   {note.excerpt}
                 </span>
               </span>
@@ -51,7 +51,7 @@ export default function NotesPage() {
                   <Tag key={tag}>{tag}</Tag>
                 ))}
               </span>
-              <span className="shrink-0 font-mono text-[11px] text-faint">
+              <span className="shrink-0 font-mono text-label text-faint">
                 {dateFmt.format(new Date(note.date))}
               </span>
               <ChevronRight

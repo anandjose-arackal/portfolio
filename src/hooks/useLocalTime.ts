@@ -16,9 +16,14 @@ export function useLocalTime(timeZone: string) {
         timeZone,
       }).format(new Date());
 
-    setTime(format());
-    const id = setInterval(() => setTime(format()), 1000);
-    return () => clearInterval(id);
+    const tick = () => setTime(format());
+    // First tick from a timer, not the effect body (react-hooks/set-state-in-effect).
+    const first = setTimeout(tick, 0);
+    const id = setInterval(tick, 1000);
+    return () => {
+      clearTimeout(first);
+      clearInterval(id);
+    };
   }, [timeZone]);
 
   return time;

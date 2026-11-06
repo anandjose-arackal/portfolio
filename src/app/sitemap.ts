@@ -1,14 +1,15 @@
 import type { MetadataRoute } from "next";
-import { nav } from "@/lib/data";
+import { nav, profile } from "@/lib/data";
 import { notes } from "@/lib/content/notes";
 
-// TODO(anand): keep in sync with metadataBase in layout.tsx.
-const BASE = "https://anandjosearackal.dev";
+// Required by output: "export" (static GitHub Pages build).
+export const dynamic = "force-static";
+
+const BASE = profile.siteUrl;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = nav.map((item) => ({
     url: `${BASE}${item.href}`,
-    lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: item.href === "/" ? 1 : 0.8,
   }));

@@ -1,8 +1,12 @@
 import type { MetadataRoute } from "next";
+import { profile } from "@/lib/data";
+
+// Required by output: "export" (static GitHub Pages build).
+export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://anandjosearackal.dev/sitemap.xml",
+    sitemap: `${profile.siteUrl}/sitemap.xml`,
   };
 }

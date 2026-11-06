@@ -39,7 +39,7 @@ export function MobileNav() {
                 />
                 <span
                   className={cn(
-                    "text-[10px]",
+                    "text-micro",
                     active ? "text-fg" : "text-faint",
                   )}
                 >

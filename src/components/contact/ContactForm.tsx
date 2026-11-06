@@ -11,9 +11,9 @@ import { profile } from "@/lib/data";
  */
 
 const fields = [
-  { id: "name", label: "Name", type: "text", required: true },
-  { id: "email", label: "Email", type: "email", required: true },
-  { id: "company", label: "Company", type: "text", required: false },
+  { id: "name", label: "Name", type: "text", required: true, autoComplete: "name" },
+  { id: "email", label: "Email", type: "email", required: true, autoComplete: "email" },
+  { id: "company", label: "Company", type: "text", required: false, autoComplete: "organization" },
 ] as const;
 
 export function ContactForm() {
@@ -39,7 +39,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-xl border border-edge bg-surface p-6"
+      className="rounded-card border border-edge bg-surface p-6"
     >
       <div className="grid gap-4 sm:grid-cols-2">
         {fields.map((field) => (
@@ -49,7 +49,7 @@ export function ContactForm() {
           >
             <label
               htmlFor={field.id}
-              className="font-mono text-[10px] tracking-[0.16em] text-faint uppercase"
+              className="font-mono text-micro tracking-label text-faint uppercase"
             >
               {field.label}
               {field.required ? <span className="text-accent"> *</span> : null}
@@ -59,8 +59,8 @@ export function ContactForm() {
               name={field.id}
               type={field.type}
               required={field.required}
-              autoComplete="off"
-              className="mt-1.5 w-full rounded-lg border border-edge bg-raised px-3 py-2 text-[13px] text-fg placeholder:text-faint/60 focus:border-accent focus:outline-none"
+              autoComplete={field.autoComplete}
+              className="mt-1.5 w-full rounded-lg border border-edge bg-raised px-3 py-2 text-small text-fg placeholder:text-faint/60 focus:border-accent focus:outline-none"
               placeholder={field.label}
             />
           </div>
@@ -68,7 +68,7 @@ export function ContactForm() {
         <div className="sm:col-span-2">
           <label
             htmlFor="message"
-            className="font-mono text-[10px] tracking-[0.16em] text-faint uppercase"
+            className="font-mono text-micro tracking-label text-faint uppercase"
           >
             Message<span className="text-accent"> *</span>
           </label>
@@ -77,21 +77,21 @@ export function ContactForm() {
             name="message"
             required
             rows={6}
-            className="mt-1.5 w-full resize-y rounded-lg border border-edge bg-raised px-3 py-2 text-[13px] leading-relaxed text-fg placeholder:text-faint/60 focus:border-accent focus:outline-none"
+            className="mt-1.5 w-full resize-y rounded-lg border border-edge bg-raised px-3 py-2 text-small leading-relaxed text-fg placeholder:text-faint/60 focus:border-accent focus:outline-none"
             placeholder="What are you building?"
           />
         </div>
       </div>
 
       <div className="mt-5 flex items-center justify-between gap-4">
-        <p className="font-mono text-[10px] text-faint">
+        <p className="font-mono text-micro text-faint">
           {sent
-            ? "→ draft opened in your mail client"
+            ? `→ no draft? write to ${profile.email}`
             : "opens a prefilled draft in your mail client"}
         </p>
         <button
           type="submit"
-          className="inline-flex items-center gap-2 rounded-lg bg-fg px-4 py-2 text-[13px] font-medium text-canvas transition-colors hover:bg-fg/85"
+          className="inline-flex items-center gap-2 rounded-lg bg-fg px-4 py-2 text-small font-medium text-canvas transition-colors hover:bg-fg/85"
         >
           <Send className="size-4" strokeWidth={1.75} />
           Send

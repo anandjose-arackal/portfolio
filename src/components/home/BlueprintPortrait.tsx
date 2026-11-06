@@ -5,11 +5,11 @@ import { profile } from "@/lib/data";
 
 /**
  * Portrait panel with faint blueprint annotations behind it.
- * Drop a monochrome `portrait.jpg` into /public to replace the
+ * Drop a `portrait.webp` into /public to replace the
  * placeholder silhouette — detected at build time.
  */
 export function BlueprintPortrait() {
-  const hasPortrait = existsSync(join(process.cwd(), "public", "portrait.jpg"));
+  const hasPortrait = existsSync(join(process.cwd(), "public", "portrait.webp"));
 
   return (
     <figure className="relative mx-auto flex h-full w-full max-w-[340px] flex-col">
@@ -42,16 +42,16 @@ export function BlueprintPortrait() {
       </svg>
 
       {/* Portrait card */}
-      <div className="relative flex flex-1 flex-col overflow-hidden rounded-xl border border-edge bg-surface shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
+      <div className="relative flex flex-1 flex-col overflow-hidden rounded-card border border-edge bg-surface shadow-card">
         <div className="relative min-h-[300px] flex-1">
           {hasPortrait ? (
             <Image
-              src="/portrait.jpg"
-              alt={`Monochrome portrait of ${profile.name}`}
+              src={`${process.env.PAGES_BASE_PATH ?? ""}/portrait.webp`}
+              alt={`3D cartoon diorama of ${profile.name} at a desk`}
               fill
               priority
               sizes="(max-width: 1024px) 340px, 340px"
-              className="object-cover grayscale"
+              className="object-cover"
             />
           ) : (
             /* Placeholder silhouette until portrait.jpg is added */
@@ -71,10 +71,10 @@ export function BlueprintPortrait() {
 
         {/* Annotation bar */}
         <figcaption className="flex items-center justify-between border-t border-edge bg-raised/60 px-4 py-2.5">
-          <span className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
+          <span className="font-mono text-micro tracking-label text-faint uppercase">
             Fig. 01 — Portrait
           </span>
-          <span className="font-mono text-[10px] tabular-nums text-faint">
+          <span className="font-mono text-micro tabular-nums text-faint">
             10.85° N, 76.27° E
           </span>
         </figcaption>

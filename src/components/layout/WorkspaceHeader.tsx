@@ -18,7 +18,7 @@ export function WorkspaceHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-edge bg-canvas/75 backdrop-blur-xl">
       <div className="flex h-12 items-center justify-between gap-4 px-5 lg:px-10">
-        <p className="font-mono text-[11px] tracking-wide text-faint">
+        <p className="font-mono text-label tracking-wide text-faint">
           aja
           <span className="mx-1.5 text-edge-strong">/</span>
           workspace
@@ -28,12 +28,12 @@ export function WorkspaceHeader() {
 
         <div className="flex items-center gap-4">
           <span className="hidden items-center gap-1.5 sm:flex">
-            <span className="size-1.5 rounded-full bg-ok" />
-            <span className="text-[11px] text-muted">{profile.status}</span>
+            <span className="size-1.5 rounded-full bg-ok shadow-glow-ok" />
+            <span className="text-label text-muted">{profile.status}</span>
           </span>
           <span
             suppressHydrationWarning
-            className="font-mono text-[11px] tabular-nums text-faint"
+            className="font-mono text-label tabular-nums text-faint"
           >
             IST {time ?? "--:--:--"}
           </span>

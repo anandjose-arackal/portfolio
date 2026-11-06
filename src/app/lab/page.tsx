@@ -28,9 +28,9 @@ export default function LabPage() {
           const status = experimentStatusMeta[exp.status];
           return (
             <Reveal key={exp.name} delay={i * 0.04}>
-              <article className="flex h-full flex-col rounded-xl border border-edge bg-surface p-5 transition-colors hover:border-edge-strong">
+              <article className="flex h-full flex-col rounded-card border border-edge bg-surface p-5 transition hover:border-info/40 hover:shadow-glow-blue">
                 <header className="flex items-center justify-between gap-3">
-                  <h2 className="font-display text-[15px] font-medium text-fg">
+                  <h2 className="font-display text-body font-medium text-fg">
                     {exp.name}
                   </h2>
                   <span className="flex shrink-0 items-center gap-1.5">
@@ -38,25 +38,25 @@ export default function LabPage() {
                       className="size-1.5 rounded-full"
                       style={{ backgroundColor: status.color }}
                     />
-                    <span className="font-mono text-[10px] tracking-wider text-faint uppercase">
+                    <span className="font-mono text-micro tracking-wider text-faint uppercase">
                       {status.label}
                     </span>
                   </span>
                 </header>
 
-                <p className="mt-3 text-[13px] leading-relaxed text-muted">
+                <p className="mt-3 text-small leading-relaxed text-muted">
                   {exp.description}
                 </p>
 
-                <p className="mt-3 flex-1 text-[12px] leading-relaxed text-faint">
-                  <span className="font-mono text-[10px] tracking-[0.14em] uppercase">
+                <p className="mt-3 flex-1 text-small leading-relaxed text-faint">
+                  <span className="font-mono text-micro tracking-label uppercase">
                     Progress{" "}
                   </span>
                   {exp.progress}
                 </p>
 
                 <footer className="mt-4 flex items-center justify-between border-t border-edge pt-3.5">
-                  <p className="pr-3 font-mono text-[11px] leading-relaxed text-faint italic">
+                  <p className="pr-3 font-mono text-label leading-relaxed text-faint italic">
                     “{exp.notes}”
                   </p>
                   {exp.github ? (

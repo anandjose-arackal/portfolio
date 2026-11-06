@@ -23,7 +23,7 @@ export function Sidebar() {
       {/* ── Identity ─────────────────────────────────── */}
       <div className="flex items-center gap-3 border-b border-edge px-5 py-4">
         <div className="relative">
-          <div className="flex size-9 items-center justify-center rounded-[10px] border border-edge bg-raised font-mono text-[12px] font-medium tracking-widest text-fg">
+          <div className="flex size-9 items-center justify-center rounded-[10px] border border-edge bg-raised font-mono text-small font-medium tracking-widest text-fg">
             {profile.initials}
           </div>
           <span className="absolute -right-0.5 -bottom-0.5 flex size-2.5">
@@ -32,16 +32,16 @@ export function Sidebar() {
           </span>
         </div>
         <div className="min-w-0">
-          <p className="truncate text-[13px] font-medium text-fg">
+          <p className="truncate text-small font-medium text-fg">
             {profile.name}
           </p>
-          <p className="truncate text-[11px] text-faint">{profile.role}</p>
+          <p className="truncate text-label text-faint">{profile.role}</p>
         </div>
       </div>
 
       {/* ── Navigation ───────────────────────────────── */}
       <nav className="flex-1 overflow-y-auto px-3 py-4">
-        <p className="px-2 pb-2 font-mono text-[10px] tracking-[0.18em] text-faint uppercase">
+        <p className="px-2 pb-2 font-mono text-micro tracking-label text-faint uppercase">
           Workspace
         </p>
         <ul className="space-y-0.5">
@@ -56,7 +56,7 @@ export function Sidebar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-[13px] transition-colors",
+                    "flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-small transition-colors",
                     active
                       ? "bg-raised text-fg"
                       : "text-muted hover:bg-raised/60 hover:text-fg",
@@ -79,41 +79,41 @@ export function Sidebar() {
 
       {/* ── System status ────────────────────────────── */}
       <div className="border-t border-edge p-3">
-        <div className="rounded-xl border border-edge bg-raised/50 p-3">
-          <p className="font-mono text-[9.5px] tracking-[0.18em] text-faint uppercase">
+        <div className="rounded-card border border-edge bg-raised/50 p-3">
+          <p className="font-mono text-micro tracking-label text-faint uppercase">
             System status
           </p>
           <dl className="mt-2.5 space-y-2">
             <div className="flex items-center justify-between gap-2">
-              <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
+              <dt className="font-mono text-micro tracking-label text-faint uppercase">
                 Status
               </dt>
-              <dd className="flex items-center gap-1.5 font-mono text-[11px] text-ok">
-                <span className="size-1.5 rounded-full bg-ok" />
+              <dd className="flex items-center gap-1.5 font-mono text-label text-ok">
+                <span className="size-1.5 rounded-full bg-ok shadow-glow-ok" />
                 CONNECTED
               </dd>
             </div>
             <div className="flex items-center justify-between gap-2">
-              <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
+              <dt className="font-mono text-micro tracking-label text-faint uppercase">
                 Company
               </dt>
-              <dd className="truncate text-[11.5px] text-muted">
+              <dd className="truncate text-label text-muted">
                 {profile.company}
               </dd>
             </div>
             <div className="flex items-center justify-between gap-2">
-              <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
+              <dt className="font-mono text-micro tracking-label text-faint uppercase">
                 Location
               </dt>
-              <dd className="text-[11.5px] text-muted">{profile.location}</dd>
+              <dd className="text-label text-muted">{profile.location}</dd>
             </div>
             <div className="flex items-center justify-between gap-2">
-              <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
+              <dt className="font-mono text-micro tracking-label text-faint uppercase">
                 Time
               </dt>
               <dd
                 suppressHydrationWarning
-                className="font-mono text-[11px] tabular-nums text-muted"
+                className="font-mono text-label tabular-nums text-muted"
               >
                 {time ?? "--:--:--"} IST
               </dd>

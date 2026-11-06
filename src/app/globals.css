@@ -2,28 +2,42 @@
 
 @theme inline {
   /* ── Palette ─────────────────────────────────────── */
-  --color-canvas: #0a0a0b;
-  --color-surface: #111214;
-  --color-raised: #17181b;
-  --color-edge: #242529;
-  --color-edge-strong: #313238;
-  --color-fg: #f3f3f3;
-  --color-muted: #b8b8b8;
-  --color-faint: #6e6f76;
-  --color-accent: #e67e22;
-  --color-ok: #27ae60;
-  --color-info: #3b82f6;
+  --color-canvas: #0d0d14;
+  --color-surface: #13131c;
+  --color-raised: #1a1a26;
+  --color-edge: #262636;
+  --color-edge-strong: #343448;
+  --color-fg: #f5f2ec;
+  --color-muted: #bdb9c8;
+  --color-faint: #737289;
+  --color-accent: #f5a524;
+  --color-ok: #7cc142;
+  --color-info: #5b8cff;
 
   /* ── Type ────────────────────────────────────────── */
   --font-display: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", monospace;
 
+  /* Type scale for small UI text (display sizes stay per-use) */
+  --text-micro: 10px;
+  --text-label: 11px;
+  --text-small: 12.5px;
+  --text-body: 15px;
+  --tracking-label: 0.16em;
+
   /* ── Shape ───────────────────────────────────────── */
   --radius-card: 0.75rem;
 
-  /* ── Motion ──────────────────────────────────────── */
-  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  /* ── Elevation ───────────────────────────────────── */
+  --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.4);
+  --shadow-drawer: -16px 0 60px rgba(0, 0, 0, 0.5);
+
+  /* Glows from the portrait diorama: lamp amber, screen blue, grass green */
+  --shadow-glow-amber: 0 0 0 1px rgba(245, 165, 36, 0.25), 0 0 28px rgba(245, 165, 36, 0.18);
+  --shadow-glow-blue: 0 0 0 1px rgba(91, 140, 255, 0.22), 0 0 32px rgba(91, 140, 255, 0.16);
+  --shadow-glow-ok: 0 0 8px rgba(124, 193, 66, 0.8);
+  --text-shadow-glow-amber: 0 0 18px rgba(245, 165, 36, 0.45);
 }
 
 html {
@@ -40,11 +54,16 @@ body {
 
   /* Blueprint / CAD-paper grid — nearly invisible by design */
   background-image:
-    linear-gradient(rgba(59, 130, 246, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.045) 1px, transparent 1px),
-    linear-gradient(rgba(59, 130, 246, 0.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.018) 1px, transparent 1px);
+    /* Lamp-amber and screen-blue glows from the portrait illustration */
+    radial-gradient(60rem 40rem at 10% -10%, rgba(245, 165, 36, 0.07), transparent 60%),
+    radial-gradient(60rem 40rem at 95% 0%, rgba(91, 140, 255, 0.09), transparent 60%),
+    linear-gradient(rgba(91, 140, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 140, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(91, 140, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 140, 255, 0.018) 1px, transparent 1px);
   background-size:
+    auto,
+    auto,
     192px 192px,
     192px 192px,
     32px 32px,
@@ -53,7 +72,7 @@ body {
 }
 
 ::selection {
-  background: rgba(230, 126, 34, 0.28);
+  background: rgba(245, 165, 36, 0.28);
   color: var(--color-fg);
 }
 

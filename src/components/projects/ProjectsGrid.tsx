@@ -29,7 +29,7 @@ function LinkButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 rounded-lg border border-edge bg-raised px-3 py-1.5 text-[12px] font-medium text-muted transition-colors hover:border-edge-strong hover:text-fg"
+      className="inline-flex items-center gap-1.5 rounded-lg border border-edge bg-raised px-3 py-1.5 text-small font-medium text-muted transition hover:border-info/40 hover:shadow-glow-blue hover:text-fg"
     >
       <Icon className="size-3.5" />
       {children}
@@ -55,26 +55,26 @@ function ProjectCard({
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "flex h-full flex-col rounded-xl border border-edge bg-surface p-5 transition-colors hover:border-edge-strong",
+        "flex h-full flex-col rounded-card border border-edge bg-surface p-5 transition hover:border-info/40 hover:shadow-glow-blue",
         project.featured && "md:col-span-2 md:p-6",
       )}
     >
       <header className="flex items-start justify-between gap-3">
         <div className="flex min-w-0 items-center gap-2.5">
           <FolderGit2 className="size-4 shrink-0 text-faint" strokeWidth={1.75} />
-          <h3 className="truncate font-mono text-[14px] font-medium text-fg">
+          <h3 className="truncate font-mono text-body font-medium text-fg">
             {project.name}
           </h3>
-          <span className="shrink-0 rounded-full border border-edge-strong px-2 py-px font-mono text-[9.5px] text-faint capitalize">
+          <span className="shrink-0 rounded-full border border-edge-strong px-2 py-px font-mono text-micro text-faint capitalize">
             {project.visibility}
           </span>
           {project.contribution ? (
-            <span className="shrink-0 rounded-full border border-info/40 bg-info/10 px-2 py-px font-mono text-[9.5px] text-info">
+            <span className="shrink-0 rounded-full border border-info/40 bg-info/10 px-2 py-px font-mono text-micro text-info">
               contributor
             </span>
           ) : null}
           {project.featured ? (
-            <span className="flex shrink-0 items-center gap-1 rounded-md border border-accent/40 bg-accent/10 px-1.5 py-0.5 font-mono text-[9.5px] tracking-wider text-accent uppercase">
+            <span className="flex shrink-0 items-center gap-1 rounded-md border border-accent/40 bg-accent/10 px-1.5 py-0.5 font-mono text-micro tracking-wider text-accent uppercase">
               <Star className="size-2.5" strokeWidth={2} />
               featured
             </span>
@@ -82,35 +82,35 @@ function ProjectCard({
         </div>
         <div className="flex shrink-0 gap-1.5">
           {project.categories.map((c) => (
-            <span key={c} className="font-mono text-[10px] text-faint">
+            <span key={c} className="font-mono text-micro text-faint">
               {c}
             </span>
           ))}
         </div>
       </header>
 
-      <p className="mt-2 font-mono text-[11px] text-info/80">
+      <p className="mt-2 font-mono text-label text-info/80">
         {project.architecture}
       </p>
 
-      <p className="mt-3 text-[13px] leading-relaxed text-muted">
+      <p className="mt-3 text-small leading-relaxed text-muted">
         {project.description}
       </p>
 
       <div className="mt-4 grid flex-1 gap-3 sm:grid-cols-2">
         <div className="rounded-lg border border-edge bg-raised/40 p-3">
-          <p className="font-mono text-[9.5px] tracking-[0.16em] text-faint uppercase">
+          <p className="font-mono text-micro tracking-label text-faint uppercase">
             Business problem
           </p>
-          <p className="mt-1.5 text-[12px] leading-relaxed text-muted">
+          <p className="mt-1.5 text-small leading-relaxed text-muted">
             {project.problem}
           </p>
         </div>
         <div className="rounded-lg border border-edge bg-raised/40 p-3">
-          <p className="font-mono text-[9.5px] tracking-[0.16em] text-faint uppercase">
+          <p className="font-mono text-micro tracking-label text-faint uppercase">
             Impact
           </p>
-          <p className="mt-1.5 text-[12px] leading-relaxed text-fg/85">
+          <p className="mt-1.5 text-small leading-relaxed text-fg/85">
             {project.impact}
           </p>
         </div>
@@ -163,16 +163,16 @@ export function ProjectsGrid() {
             type="button"
             onClick={() => setFilter(f)}
             className={cn(
-              "rounded-lg border px-3 py-1.5 font-mono text-[12px] transition-colors",
+              "rounded-lg border px-3 py-1.5 font-mono text-small transition-colors",
               filter === f
                 ? "border-accent/50 bg-accent/10 text-accent"
-                : "border-edge bg-surface text-muted hover:border-edge-strong hover:text-fg",
+                : "border-edge bg-surface text-muted hover:border-info/40 hover:shadow-glow-blue hover:text-fg",
             )}
           >
             {f}
           </button>
         ))}
-        <span className="ml-auto self-center font-mono text-[11px] text-faint">
+        <span className="ml-auto self-center font-mono text-label text-faint">
           {visible.length} of {projects.length}
         </span>
       </div>

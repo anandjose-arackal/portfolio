@@ -24,10 +24,10 @@ export default function HomePage() {
       </section>
 
       <footer className="flex flex-col items-start justify-between gap-2 border-t border-edge py-8 sm:flex-row sm:items-center">
-        <p className="font-mono text-[11px] text-faint">
+        <p className="font-mono text-label text-faint">
           © {new Date().getFullYear()} {profile.name}
         </p>
-        <p className="font-mono text-[11px] text-faint">
+        <p className="font-mono text-label text-faint">
           Next.js · TypeScript · Tailwind — deployed on Vercel
         </p>
       </footer>

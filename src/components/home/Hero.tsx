@@ -1,8 +1,13 @@
+import { existsSync } from "fs";
+import { join } from "path";
 import { ArrowUpRight, FileText, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 import { profile } from "@/lib/data";
 import { Reveal } from "@/components/ui/Reveal";
 import { BlueprintPortrait } from "@/components/home/BlueprintPortrait";
+
+// Resume button shows only once public/resume.pdf exists (checked at build).
+const hasResume = existsSync(join(process.cwd(), "public", profile.resume));
 
 const ctas = [
   {
@@ -33,14 +38,14 @@ const ctas = [
     primary: false,
     external: false,
   },
-];
+].filter((cta) => hasResume || cta.label !== "Resume");
 
 export function Hero() {
   return (
     <section className="grid gap-10 pt-8 pb-14 lg:grid-cols-[1fr_360px] lg:gap-16 lg:pt-9">
       <div>
         <Reveal>
-          <p className="flex items-center gap-2 font-mono text-[12px] tracking-wide text-muted">
+          <p className="flex items-center gap-2 font-mono text-small tracking-wide text-muted">
             <span className="relative flex size-2">
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-ok/40" />
               <span className="relative inline-flex size-2 rounded-full bg-ok" />
@@ -57,17 +62,17 @@ export function Hero() {
 
         <Reveal delay={0.12}>
           <p className="mt-4 flex flex-col gap-1">
-            <span className="font-display text-lg font-medium text-accent">
+            <span className="font-display text-lg font-medium text-accent text-shadow-glow-amber">
               {profile.role}
             </span>
-            <span className="font-mono text-[12.5px] tracking-wide text-muted">
+            <span className="font-mono text-small tracking-wide text-muted">
               {profile.specialties.join(" · ")}
             </span>
           </p>
         </Reveal>
 
         <Reveal delay={0.18}>
-          <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted">
+          <p className="mt-6 max-w-xl text-body leading-relaxed text-muted">
             {profile.summary}
           </p>
         </Reveal>
@@ -83,8 +88,8 @@ export function Hero() {
                   : {})}
                 className={
                   primary
-                    ? "inline-flex items-center gap-2 rounded-lg bg-fg px-4 py-2 text-[13px] font-medium text-canvas transition-colors hover:bg-fg/85"
-                    : "inline-flex items-center gap-2 rounded-lg border border-edge bg-surface px-4 py-2 text-[13px] font-medium text-muted transition-colors hover:border-edge-strong hover:text-fg"
+                    ? "inline-flex items-center gap-2 rounded-lg bg-fg px-4 py-2 text-small font-medium text-canvas transition-colors hover:bg-fg/85"
+                    : "inline-flex items-center gap-2 rounded-lg border border-edge bg-surface px-4 py-2 text-small font-medium text-muted transition hover:border-info/40 hover:shadow-glow-blue hover:text-fg"
                 }
               >
                 <Icon className="size-4" strokeWidth={1.75} />

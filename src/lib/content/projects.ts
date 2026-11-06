@@ -66,6 +66,21 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    name: "food-portal",
+    visibility: "private",
+    categories: ["Automation"],
+    architecture: "Next.js 16 · Supabase (Postgres + RLS + Realtime) · Razorpay · Firebase OTP",
+    description:
+      "Food pre-order and counter app for Nazrani Fest 2026: guests order and pay online and get a QR pickup token; staff run counter billing, live order handover and a payments dashboard.",
+    problem:
+      "Festival food stalls mean long queues, cash handling and no clear record of who has paid for what.",
+    impact:
+      "Online and counter payments through Razorpay (UPI, GPay, cards), confirmed automatically by webhook; every order line priced server-side in one atomic database call.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Razorpay", "Firebase", "Vercel"],
+    links: { demo: "https://www.nasrani.in" },
+    featured: false,
+  },
+  {
     name: "padheyam",
     visibility: "public",
     categories: ["Open Source"],

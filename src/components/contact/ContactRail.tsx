@@ -37,8 +37,8 @@ export function ContactRail() {
 
   return (
     <aside className="space-y-3">
-      <div className="rounded-xl border border-edge bg-surface p-5">
-        <p className="font-mono text-[10px] tracking-[0.18em] text-faint uppercase">
+      <div className="rounded-card border border-edge bg-surface p-5">
+        <p className="font-mono text-micro tracking-label text-faint uppercase">
           Channel status
         </p>
         <dl className="mt-4 space-y-3.5">
@@ -47,13 +47,13 @@ export function ContactRail() {
               key={row.label}
               className="flex items-center justify-between gap-3"
             >
-              <dt className="flex items-center gap-2 font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
+              <dt className="flex items-center gap-2 font-mono text-micro tracking-label text-faint uppercase">
                 {row.icon ? (
                   <row.icon className="size-3.5" strokeWidth={1.75} />
                 ) : null}
                 {row.label}
               </dt>
-              <dd className="text-[12.5px] text-fg">{row.value}</dd>
+              <dd className="text-small text-fg">{row.value}</dd>
             </div>
           ))}
         </dl>
@@ -64,7 +64,7 @@ export function ContactRail() {
           href={profile.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-xl border border-edge bg-surface px-4 py-3 text-[13px] font-medium text-muted transition-colors hover:border-edge-strong hover:text-fg"
+          className="flex items-center justify-center gap-2 rounded-card border border-edge bg-surface px-4 py-3 text-small font-medium text-muted transition hover:border-info/40 hover:shadow-glow-blue hover:text-fg"
         >
           <LinkedinIcon className="size-4" />
           LinkedIn
@@ -74,7 +74,7 @@ export function ContactRail() {
           href={profile.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-xl border border-edge bg-surface px-4 py-3 text-[13px] font-medium text-muted transition-colors hover:border-edge-strong hover:text-fg"
+          className="flex items-center justify-center gap-2 rounded-card border border-edge bg-surface px-4 py-3 text-small font-medium text-muted transition hover:border-info/40 hover:shadow-glow-blue hover:text-fg"
         >
           <GithubIcon className="size-4" />
           GitHub
