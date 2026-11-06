@@ -16,8 +16,8 @@ import {
 
 /* ────────────────────────────────────────────────────────────
    Profile
-   TODO(anand): replace placeholder URLs with real profiles and
-   drop resume.pdf into /public.
+   TODO(anand): replace placeholder URLs with real profiles.
+   Resume is hosted on Google Drive.
    ──────────────────────────────────────────────────────────── */
 
 export const profile = {
@@ -33,7 +33,7 @@ export const profile = {
   email: "anandjose.live@gmail.com",
   github: "https://github.com/anandjose-arackal",
   linkedin: "https://www.linkedin.com/in/anand-jose-arackal",
-  resume: "/resume.pdf",
+  resume: "https://drive.google.com/file/d/1Xhqg2XaJd9-8TVuG40U8UzxuHDnR7HA2/view?usp=sharing",
   // Vercel sets this to the production domain; set NEXT_PUBLIC_SITE_URL to override.
   siteUrl:
     process.env.NEXT_PUBLIC_SITE_URL ??

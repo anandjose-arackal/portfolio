@@ -1,13 +1,8 @@
-import { existsSync } from "fs";
-import { join } from "path";
 import { ArrowUpRight, FileText, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 import { profile } from "@/lib/data";
 import { Reveal } from "@/components/ui/Reveal";
 import { BlueprintPortrait } from "@/components/home/BlueprintPortrait";
-
-// Resume button shows only once public/resume.pdf exists (checked at build).
-const hasResume = existsSync(join(process.cwd(), "public", profile.resume));
 
 const ctas = [
   {
@@ -15,7 +10,7 @@ const ctas = [
     href: profile.resume,
     icon: FileText,
     primary: true,
-    external: false,
+    external: true,
   },
   {
     label: "GitHub",
@@ -38,7 +33,7 @@ const ctas = [
     primary: false,
     external: false,
   },
-].filter((cta) => hasResume || cta.label !== "Resume");
+];
 
 export function Hero() {
   return (
